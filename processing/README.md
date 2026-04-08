@@ -17,24 +17,24 @@ These figures are not meant to reproduce the full production dataset. They are i
    ```bash
    cd GPU-framework-for-computing-multiscale-triadic-interactions
 
-2. Create a dedicated conda environment for the plotting step:
+3. Create a dedicated conda environment for the plotting step:
 
    ```bash
    conda create -n triadic_plot python=3.11 numpy=1.26 pandas=2.1.4 pyarrow=14.0.2 matplotlib
    conda activate triadic_plot
 
-3. If you want to run the plotting script from Spyder, install the matching Spyder kernel in the same environment:
+5. If you want to run the plotting script from Spyder, install the matching Spyder kernel in the same environment:
 
    ```bash
    conda install spyder-kernels=3.1
 
-4. If needed, install Spyder in that environment and launch it from there:
+6. If needed, install Spyder in that environment and launch it from there:
 
    ```bash
    conda install spyder -y
    spyder
 
-5. Run the plotting script located in this directory.
+7. Run the plotting script located in this directory.
 
 ## Running the plotting script
 The reduced POD outputs are distributed in Parquet directory format. In our tests, reading these files was reliable with:
