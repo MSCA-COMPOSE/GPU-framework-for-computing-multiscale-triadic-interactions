@@ -1,7 +1,9 @@
 # STATS
 
-This directory mirrors the output-data location used by the public workflow.
+This directory mirrors the output-data location.
 
-It contains example outputs from the POD step, including the quantities required as input to the triadic-interaction computation, together with the corresponding triadic output.
+It contains example output data from the POD step, including the files needed as input for the triadic-interaction computation, together with the corresponding triadic output.
 
-These files are provided as a reduced public test case to demonstrate the full workflow in a lightweight and reproducible form.
+The full reduced output package is not stored entirely in this GitHub repository. In particular, the mean fields and the Parquet outputs from the POD step were not added here because of their size. The Parquet results are stored in directory format and can be retrieved from Zenodo at:
+
+**[Zenodo link to be added here]**
