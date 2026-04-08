@@ -1,4 +1,4 @@
-# Figures
+# Processing
 
 This directory contains example figures generated from the reduced public test case distributed with this repository, together with the corresponding plotting script.
 
