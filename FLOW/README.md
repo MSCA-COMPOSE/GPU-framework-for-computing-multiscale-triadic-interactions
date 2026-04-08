@@ -4,6 +4,8 @@ This directory mirrors the input-data location.
 
 The reduced public input dataset is archived separately and is not stored directly in this GitHub repository because of its size.
 
-It can be retrieved from Zenodo at:
+The sequence file used by the workflow is provided in this repository.
+
+The reduced dataset can be retrieved from Zenodo at:
 
 **[Zenodo link to be added here]**
