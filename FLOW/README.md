@@ -8,4 +8,4 @@ The sequence file used by the workflow is provided in this repository.
 
 The reduced dataset can be retrieved from Zenodo at:
 
-**[Zenodo link to be added here]**
+**https://doi.org/10.5281/zenodo.19481070**
