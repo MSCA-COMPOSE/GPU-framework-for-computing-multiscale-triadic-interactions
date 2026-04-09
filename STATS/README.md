@@ -6,4 +6,4 @@ It contains example output data from the POD step, including the files needed as
 
 The full reduced output package is not stored entirely in this GitHub repository. In particular, the mean fields and the Parquet outputs from the POD step were not included here due to their size. The Parquet results are stored in a directory format and can be retrieved from Zenodo at:
 
-**[Zenodo link to be added here]**
+**https://doi.org/10.5281/zenodo.19481070**
