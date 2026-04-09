@@ -10,8 +10,8 @@ This public repository provides the reduced workflow used for the present study,
 
 - `hpda/`: Python source files for the POD step, the triadic interaction computation, and the associated helper functions.
 - `submission/`: example SLURM submission scripts for the reduced public workflow.
-- `FLOW/`: input-data directory for the workflow. It contains the sequence file used by the reduced public test case. The full set of raw flow snapshots and the mesh are not stored directly in this GitHub repository because of their size, and can be retrieved from Zenodo at [...].
-- `STATS/`: output data directory for the workflow. It contains example outputs from the POD step together with example triadic output. Some large files, such as mean fields and Parquet outputs stored in directory format can be retrieved from Zenodo at [...].
+- `FLOW/`: input-data directory for the workflow. It contains the sequence file used by the reduced public test case. The full set of raw flow snapshots and the mesh are not stored directly in this GitHub repository because of their size, and can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070].
+- `STATS/`: output data directory for the workflow. It contains example outputs from the POD step together with example triadic output. Some large files, such as mean fields and Parquet outputs stored in directory format can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070].
 - `Processing/`: plotting scripts and example figures showing how to import the reduced POD and triadic outputs and visualize the main quantities of interest.
 
 ## Workflow overview
