@@ -18,7 +18,7 @@ This public repository provides the reduced workflow used for the present study,
 
 The reduced public workflow follows two main stages:
 
-1. POD computation from the reduced flow snapshots.
+1. POD computation from the reduced flow snapshots,
 2. Triadic interaction computation from the POD output using a GPU-accelerated Dask workflow.
 
 The submission scripts included in `submission/` show how these two stages can be run sequentially on an HPC system.
@@ -78,8 +78,8 @@ This is a cleaned version of the environment used for the GPU workflow. Cluster-
 
 The submission scripts in `submission/` illustrate the intended execution order:
 
-1. run the POD step;
-2. run the triadic step using the POD outputs;
+1. run the POD step,
+2. run the triadic step using the POD outputs,
 3. Optionally submit both in sequence with the provided pipeline script.
 
 The exact commands depend on the local SLURM configuration, but the directory structure expected by the scripts is already reflected in this repository.
