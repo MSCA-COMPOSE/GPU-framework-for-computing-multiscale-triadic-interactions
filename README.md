@@ -96,15 +96,15 @@ These examples are included as lightweight checks of the public workflow rather 
 
 ### POD energy content
 
-![POD energy content](Processing/fig_pod_energy.png)
+![POD energy content](Processing/pod_energy.png)
 
 ### Temporal coefficients
 
-![Temporal coefficients](Processing/fig_temporal_coefficients.png)
+![Temporal coefficients](Processing/temporal_coefficients.png)
 
 ### Triadic interaction cube
 
-![Triadic interaction cube](Processing/fig_triadic_cube.png)
+![Triadic interaction cube](Processing/triadic_cube.png)
 
 ## Notes on post-processing
 
