@@ -1,6 +1,6 @@
 # GPU framework for computing multiscale triadic interactions
 
-This repository contains the computational framework presented in the manuscript currently under submission on the GPU-accelerated computation of multiscale triadic interactions from large flow datasets.
+This repository contains the computational framework presented in the manuscript currently under review on the GPU-accelerated computation of multiscale triadic interactions from large flow datasets.
 
 The POD stage adopted here is the same framework introduced in Biassoni et al. (2024), later extended to SPOD in Biassoni et al. (2026). The original POD-related public record is available on Zenodo at [https://zenodo.org/records/13945003](https://zenodo.org/records/13945003), while the SPOD-oriented public workflow is available at the ACROSS public aeronautics repository: [https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics](https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics).
 
