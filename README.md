@@ -120,7 +120,7 @@ For this reason, a dedicated post-processing environment is recommended for the 
 
 If this repository needs to be cited, please use the archived Zenodo release associated with it.
 
-**DOI:** [to be added]
+DOI: https://doi.org/10.5281/zenodo.19481070
 
 The scientific context, methodology, and discussion of results are described in the associated manuscript.
 
