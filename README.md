@@ -1,5 +1,8 @@
 # GPU framework for computing multiscale triadic interactions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20284897.svg)](https://doi.org/10.5281/zenodo.20284897)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This repository contains the computational framework presented in the manuscript currently under review on the GPU-accelerated computation of multiscale triadic interactions from large flow datasets.
 
 The POD stage adopted here is the same framework introduced in Biassoni et al. (2024), later extended to SPOD in Biassoni et al. (2026). The original POD-related public record is available on Zenodo at [https://zenodo.org/records/13945003](https://zenodo.org/records/13945003), while the SPOD-oriented public workflow is available at the ACROSS public aeronautics repository: [https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics](https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics).
@@ -10,8 +13,8 @@ This public repository provides the reduced workflow used for the present study,
 
 - `hpda/`: Python source files for the POD step, the triadic interaction computation, and the associated helper functions.
 - `submission/`: example SLURM submission scripts for the reduced public workflow.
-- `FLOW/`: input-data directory for the workflow. It contains the sequence file used by the reduced public test case. The full set of raw flow snapshots and the mesh are not stored directly in this GitHub repository because of their size, and can be retrieved from Zenodo at https://doi.org/10.5281/zenodo.19481070.
-- `STATS/`: output data directory for the workflow. It contains example outputs from the POD step together with example triadic output. Some large files, such as mean fields and Parquet outputs stored in directory format can be retrieved from Zenodo at https://doi.org/10.5281/zenodo.19481070.
+- `FLOW/`: input-data directory for the workflow. It contains the sequence file used by the reduced public test case. The full set of raw flow snapshots and the mesh are not stored directly in this GitHub repository because of their size, and can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
+- `STATS/`: output data directory for the workflow. It contains example outputs from the POD step together with example triadic output. Some large files, such as mean fields and Parquet outputs stored in directory format can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
 - `Processing/`: plotting scripts and example figures showing how to import the reduced POD and triadic outputs and visualize the main quantities of interest.
 
 ## Workflow overview
@@ -27,7 +30,7 @@ The submission scripts included in `submission/` show how these two stages can b
 
 The repository includes a reduced public test case designed to reproduce the workflow on a much smaller dataset than the original production case.
 
-The `FLOW/` directory mirrors the input data structure used by the workflow. The mesh and the sequence file required by the reduced case are provided in the repository. The raw flow snapshots themselves are not stored directly in GitHub because of their size and are instead distributed separately through Zenodo at [].
+The `FLOW/` directory mirrors the input data structure used by the workflow. The mesh and the sequence file required by the reduced case are provided in the repository. The raw flow snapshots themselves are not stored directly in GitHub because of their size and are instead distributed separately through Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
 
 The `STATS/` directory mirrors the output data structure used by the workflow. It contains reduced example outputs from the POD step, including the files required as input to the triadic interaction computation, together with example triadic output.
 
@@ -118,15 +121,18 @@ For this reason, a dedicated post-processing environment is recommended for the 
 
 ## Citation
 
-If this repository needs to be cited, please use the archived Zenodo release associated with it.
+If you use this repository, please cite the archived Zenodo release:
 
-**DOI**: to be added
+> Lopes, G., Rosenzweig, M., Przytarski, P. J., Sandberg, R., & Lengani, D. (2026). *MSCA-COMPOSE/GPU-framework-for-computing-multiscale-triadic-interactions: v1.0.0* (v1.0.0). Zenodo. [https://doi.org/10.5281/zenodo.20284897](https://doi.org/10.5281/zenodo.20284897)
 
-The scientific context, methodology, and discussion of results are described in the associated manuscript.
+**DOI**: [10.5281/zenodo.20284897](https://doi.org/10.5281/zenodo.20284897)
+
+The scientific context, methodology, and discussion of results are described in the associated manuscript:
+
+> Lopes, G., Rosenzweig, M., Przytarski, P. J., Sandberg, R., & Lengani, D. *A GPU framework for computing multiscale triadic interactions in turbulent flows.* Submitted to *Computers & Fluids* (under review), 2026.
+
+This entry will be updated with the journal reference and DOI upon acceptance.
 
 ## License
 
 This repository is distributed under the MIT License.
-
-
-
