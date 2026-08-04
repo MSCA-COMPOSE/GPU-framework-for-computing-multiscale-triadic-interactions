@@ -11,7 +11,7 @@ This public repository provides the reduced workflow used for the present study,
 
 ## Repository structure
 
-- `hpda/`: Python source files for the POD step, the triadic interaction computation, and the associated helper functions.
+- `hpda/`: Python source files for the POD and SPOD steps, the triadic interaction computation on both bases, and the associated helper functions.
 - `submission/`: example SLURM submission scripts for the reduced public workflow.
 - `FLOW/`: input-data directory for the workflow. It contains the sequence file used by the reduced public test case. The full set of raw flow snapshots and the mesh are not stored directly in this GitHub repository because of their size, and can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
 - `STATS/`: output data directory for the workflow. It contains example outputs from the POD step together with example triadic output. Some large files, such as mean fields and Parquet outputs stored in directory format can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
@@ -25,6 +25,8 @@ The reduced public workflow follows two main stages:
 2. Triadic interaction computation from the POD output using a GPU-accelerated Dask workflow.
 
 The submission scripts included in `submission/` show how these two stages can be run sequentially on an HPC system.
+
+The repository also includes the SPOD variant of the same workflow, used for the basis comparison in Appendix A of the associated manuscript: `dask_read_SPOD.py` computes a block SPOD of the snapshots (non-overlapping blocks, rectangular window, two-sided FFT), and `dask_triadic_SPOD.py` evaluates the complex triadic transfer tensor on the SPOD basis, with the temporal triple product supported on the zero-sum frequency set modulo the sampling frequency. The corresponding submission scripts are `dask_read_SPOD.sh`, `dask_triadic_SPOD.sh`, and `triadic_SPOD_pipeline.sh`.
 
 ## Reduced public test case
 
