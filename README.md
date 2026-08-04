@@ -5,7 +5,7 @@
 
 This repository contains the computational framework presented in the manuscript currently under review on the GPU-accelerated computation of multiscale triadic interactions from large flow datasets.
 
-The POD stage adopted here is the same framework introduced in Biassoni et al. (2024), later extended to SPOD in Biassoni et al. (2026). The original POD-related public record is available on Zenodo at [https://zenodo.org/records/13945003](https://zenodo.org/records/13945003), while the SPOD-oriented public workflow is available at the ACROSS public aeronautics repository: [https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics](https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics).
+The computation of the POD and SPOD bases and eigenvalues follows the distributed HPC frameworks of Biassoni et al. (2024) for POD and Biassoni et al. (2026) for SPOD. Their public records are available on Zenodo at [https://zenodo.org/records/13945003](https://zenodo.org/records/13945003) and at the ACROSS public aeronautics repository [https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics](https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics), respectively. Those records concern the CPU computation of the decomposition stage only and do not include the GPU triadic-interaction computation developed here.
 
 This public repository provides the reduced workflow used for the present study, including the GPU-enabled Dask implementation for the triadic-interaction computation, a reduced public test case, example outputs, and post-processing scripts.
 
@@ -125,7 +125,7 @@ For this reason, a dedicated post-processing environment is recommended for the 
 
 If you use this repository, please cite the archived Zenodo release:
 
-> Lopes, G., Rosenzweig, M., Przytarski, P. J., Sandberg, R., & Lengani, D. (2026). *MSCA-COMPOSE/GPU-framework-for-computing-multiscale-triadic-interactions: v1.0.0* (v1.0.0). Zenodo. [https://doi.org/10.5281/zenodo.20284897](https://doi.org/10.5281/zenodo.20284897)
+> Lopes, G., Rosenzweig, M., Przytarski, P. J., Sandberg, R., & Lengani, D. (2026). *MSCA-COMPOSE/GPU-framework-for-computing-multiscale-triadic-interactions*. Zenodo. [https://doi.org/10.5281/zenodo.20284897](https://doi.org/10.5281/zenodo.20284897)
 
 **DOI**: [10.5281/zenodo.20284897](https://doi.org/10.5281/zenodo.20284897)
 
