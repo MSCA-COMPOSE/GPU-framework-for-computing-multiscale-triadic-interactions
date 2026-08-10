@@ -81,8 +81,10 @@ if __name__ == '__main__':
     # form: with the flattening mode = f*nblockf + r, the product is non-zero
     # only for frequency triples satisfying fn = (fl + fm) mod nDFT, the
     # circular-convolution form of the zero-sum condition, and reads
-    # sum_b conj(theta[fl,b,rl]) conj(theta[fm,b,rm]) theta[fn,b,rn] / sqrt(nDFT)
-    # with the conjugate convention matching the spatial kernel
+    # (1/nt) sum_b conj(theta[fl,b,rl]) conj(theta[fm,b,rm]) theta[fn,b,rn] / sqrt(nDFT),
+    # with the 1/nt factor giving the triple product the scaling of a sampled
+    # time average, as for the POD triple product of dask_triadic.py, and the
+    # conjugate convention matching the spatial kernel
     # phi_l phi_m conj(grad phi_n).
     triple_np = np.zeros((nt, nt, nt), dtype=np.complex64)
 
@@ -95,7 +97,7 @@ if __name__ == '__main__':
                 np.conj(theta_np[fm, :, :]),
                 theta_np[fn, :, :],
                 optimize=True
-            ) / np.sqrt(np.float32(nDFT))
+            ) / (np.float32(nt) * np.sqrt(np.float32(nDFT)))
             triple_np[
                 fl * nblockf:(fl + 1) * nblockf,
                 fm * nblockf:(fm + 1) * nblockf,

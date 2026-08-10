@@ -74,14 +74,16 @@ if __name__ == '__main__':
     # Temporal triple product on the Fourier basis, evaluated in closed
     # form: it is non-zero only for frequency triples satisfying
     # n = (l + m) mod nt, the circular-convolution form of the zero-sum
-    # condition, where it takes the constant value 1 / sqrt(nt). This is
+    # condition, where it takes the constant value 1 / (nt * sqrt(nt)),
+    # the 1/nt factor giving the triple product the scaling of a sampled
+    # time average, as for the POD triple product of dask_triadic.py. This is
     # the SPOD triple product of dask_triadic_SPOD.py in the single-block
     # limit (nblockf = 1, theta = 1), with the conjugate convention
     # matching the spatial kernel phi_l phi_m conj(grad phi_n). Because the
     # non-resonant entries vanish identically, the spatial kernel is
     # evaluated only on the resonant set and the triple product reduces to
     # the scalar factor applied below.
-    triple_fourier = 1.0 / np.sqrt(np.float32(nt))
+    triple_fourier = 1.0 / (np.float32(nt) * np.sqrt(np.float32(nt)))
 
     logging.info('Reading mesh')
 
