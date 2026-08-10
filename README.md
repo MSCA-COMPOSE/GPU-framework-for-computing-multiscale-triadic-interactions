@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20284897.svg)](https://doi.org/10.5281/zenodo.20284897)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the computational framework presented in the manuscript currently under review on the GPU-accelerated computation of multiscale triadic interactions from large flow datasets.
+This repository contains the computational framework presented in the manuscript currently under review, which focuses on GPU-accelerated computation of multiscale triadic interactions from large flow datasets.
 
 The computation of the POD and SPOD bases and eigenvalues follows the distributed HPC frameworks of Biassoni et al. (2024) for POD and Biassoni et al. (2026) for SPOD. Their public records are available on Zenodo at [https://zenodo.org/records/13945003](https://zenodo.org/records/13945003) and at the ACROSS public aeronautics repository [https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics](https://git.mycloud-links.com/across-public/orchestrator/applications/aeronautics), respectively. Those records concern the CPU computation of the decomposition stage only and do not include the GPU triadic-interaction computation developed here.
 
@@ -11,10 +11,10 @@ This public repository provides the reduced workflow used for the present study,
 
 ## Repository structure
 
-- `hpda/`: Python source files for the POD and SPOD steps, the triadic interaction computation on both bases, and the associated helper functions.
+- `hpda/`: Python source files for the POD, SPOD, and Fourier steps, the triadic interaction computation on the three bases, and the associated helper functions.
 - `submission/`: example SLURM submission scripts for the reduced public workflow.
 - `FLOW/`: input-data directory for the workflow. It contains the sequence file used by the reduced public test case. The full set of raw flow snapshots and the mesh are not stored directly in this GitHub repository because of their size, and can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
-- `STATS/`: output data directory for the workflow. It contains example outputs from the POD step together with example triadic output. Some large files, such as mean fields and Parquet outputs stored in directory format can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
+- `STATS/`: output data directory for the workflow. It contains example outputs from the POD step together with example triadic output. Some large files, such as mean fields and Parquet outputs stored in directory format, can be retrieved from Zenodo at [https://doi.org/10.5281/zenodo.19481070](https://doi.org/10.5281/zenodo.19481070).
 - `Processing/`: plotting scripts and example figures showing how to import the reduced POD and triadic outputs and visualize the main quantities of interest.
 
 ## Workflow overview
@@ -26,7 +26,7 @@ The reduced public workflow follows two main stages:
 
 The submission scripts included in `submission/` show how these two stages can be run sequentially on an HPC system.
 
-The repository also includes the SPOD variant of the same workflow, used for the basis comparison in Appendix A of the associated manuscript: `dask_read_SPOD.py` computes a block SPOD of the snapshots (non-overlapping blocks, rectangular window, two-sided FFT), and `dask_triadic_SPOD.py` evaluates the complex triadic transfer tensor on the SPOD basis, with the temporal triple product supported on the zero-sum frequency set modulo the sampling frequency. The corresponding submission scripts are `dask_read_SPOD.sh`, `dask_triadic_SPOD.sh`, and `triadic_SPOD_pipeline.sh`.
+The repository also includes the SPOD and Fourier variants of the same workflow, used for the basis comparison in Appendix B of the associated manuscript. For SPOD, `dask_read_SPOD.py` computes a block SPOD of the snapshots (non-overlapping blocks, rectangular window, two-sided FFT), and `dask_triadic_SPOD.py` evaluates the complex triadic transfer tensor on the SPOD basis, with the temporal triple product supported on the zero-sum frequency set modulo the sampling frequency. The corresponding submission scripts are `dask_read_SPOD.sh`, `dask_triadic_SPOD.sh`, and `triadic_SPOD_pipeline.sh`. For Fourier, `dask_triadic_FOURIER.py` evaluates the same tensor on the unitary discrete Fourier transform of the snapshot record, submitted through `dask_triadic_FOURIER.sh`. The Fourier basis requires no precomputed basis file, so this variant consists of a single stage. On the Fourier basis, the temporal triple product restricts the donor index to n = (l + m) mod nt, and the spatial kernel is evaluated only on this resonant set, reducing the contraction count from nt^3 to nt^2 per spatial block. The saved tensor `py_tr_FOURIER_tot_0_2.npy` has the same shape and index convention as the POD and SPOD outputs.
 
 ## Reduced public test case
 
