@@ -131,7 +131,7 @@ If you use this repository, please cite the archived Zenodo release:
 
 The scientific context, methodology, and discussion of results are described in the associated manuscript:
 
-> Lopes, G., Rosenzweig, M., Przytarski, P. J., Sandberg, R., & Lengani, D. *A GPU framework for computing multiscale triadic interactions in turbulent flows.* Submitted to *Computers & Fluids* (under review), 2026.
+> Lopes, G., Rosenzweig, M., Przytarski, P.J., Sandberg, R. and Lengani, D., 2026. A GPU framework for computing multiscale triadic interactions in turbulent flows. Computers & Fluids, p.107298.
 
 This entry will be updated with the journal reference and DOI upon acceptance.
 
